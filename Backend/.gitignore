@@ -1,0 +1,33 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+ENV/
+env/
+
+# Environment variables
+# .env
+
+# Flask cache files
+instance/
+.webassets-cache
+
+# Database files
+*.sqlite3
+*.db
+
+# IDE/editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Log files
+*.log
+
+# Mac and Windows system files
+.DS_Store
+Thumbs.db

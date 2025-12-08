@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+.dark .MuiTab-root {
+  color: white !important;
+}
