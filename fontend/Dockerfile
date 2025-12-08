@@ -6,6 +6,8 @@ WORKDIR /mywebapp
 COPY package*.json ./
 RUN npm install
 COPY . .
+
+# Only build for production
 RUN if [ "$MODE" = "prod" ]; then npm run build; else echo "Skipping build"; fi
 
 # Stage 2: local dev
