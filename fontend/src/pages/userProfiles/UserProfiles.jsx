@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import UserEditProfiles from "./UserEditProfiles";
-import PasswordSections from "./PasswordSections ";
+import PasswordSections from "./PasswordSections";
 import useAuth from "../../hooks/useAuth";
 import { FiLogOut } from "react-icons/fi";
 import LogOut from "../auth/LogOut/LogOut";
