@@ -13,7 +13,8 @@ import {
 } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "../Lang/LanguageSwitcher";
-import UserMenu from "../ui/Usermenu";
+// import UserMenu from "../ui/UserMenu";
+import UserMenu from "../ui/UserMenu.jsx";
 import useAuth from "../../hooks/useAuth";
 
 const ClientAdminNavBar = ({ darkMode, togleDarkMode }) => {
@@ -30,7 +31,7 @@ const ClientAdminNavBar = ({ darkMode, togleDarkMode }) => {
           placeholder="Search..."
           className="bg-transparent dark:placeholder-white outline-none text-sm flex-grow"
         />
-        <FiSearch className="text-gray-500 dark:text-white"  />
+        <FiSearch className="text-gray-500 dark:text-white" />
       </div>
 
       {/* Right Section: Icons & Controls */}
@@ -40,7 +41,7 @@ const ClientAdminNavBar = ({ darkMode, togleDarkMode }) => {
           <span className="text-sm font-medium hidden sm:inline">
             {t("welcome")}
           </span>
-          <LanguageSwitcher  />
+          <LanguageSwitcher />
         </div>
 
         {/* Theme Toggle */}
@@ -48,7 +49,11 @@ const ClientAdminNavBar = ({ darkMode, togleDarkMode }) => {
           onClick={togleDarkMode}
           className="text-xl text-gray-600 hover:text-black  cursor-pointer"
         >
-          {darkMode ? <FiSun className="text-gray-700 dark:text-white dark:hover:text-yellow-200" /> : <FiMoon />}
+          {darkMode ? (
+            <FiSun className="text-gray-700 dark:text-white dark:hover:text-yellow-200" />
+          ) : (
+            <FiMoon />
+          )}
         </button>
 
         {/* Fullscreen Toggle */}
@@ -57,7 +62,11 @@ const ClientAdminNavBar = ({ darkMode, togleDarkMode }) => {
           className="text-xl text-gray-600 hover:text-black transition cursor-pointer"
           aria-label={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}
         >
-          {isFullscreen ? <FiMinimize2 className="dark:text-white dark:hover:text-yellow-200" /> : <FiMaximize2 className="dark:text-white dark:hover:text-yellow-200" />}
+          {isFullscreen ? (
+            <FiMinimize2 className="dark:text-white dark:hover:text-yellow-200" />
+          ) : (
+            <FiMaximize2 className="dark:text-white dark:hover:text-yellow-200" />
+          )}
         </button>
 
         {/* Notification Icon */}
@@ -80,9 +89,8 @@ const ClientAdminNavBar = ({ darkMode, togleDarkMode }) => {
         {/* <FiList className="text-xl text-gray-600 dark:text-white dark:hover:text-yellow-200 " /> */}
 
         {/* User Menu */}
-        
-          <UserMenu user={auth?.user} />
-        
+
+        <UserMenu user={auth?.user} />
       </div>
     </div>
   );
