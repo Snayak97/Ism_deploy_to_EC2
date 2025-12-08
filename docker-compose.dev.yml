@@ -84,7 +84,7 @@ services:
   # Vite Frontend
   # -------------------------------------------------------
   frontend:
-    image: snayak97/ism_project_fontend_dev:${VERSION}
+    image: snayak97/ism_project_frontend_dev:${VERSION}
     environment:
       MODE: ${MODE:-local}   
     container_name: ismsoft-frontend-dev
