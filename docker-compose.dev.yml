@@ -119,7 +119,7 @@ services:
 
 
 volumes:
-  postgres_data_:
+  postgres_data:
   redis_data:
 
 networks:
