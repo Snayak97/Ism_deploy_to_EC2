@@ -14,7 +14,7 @@ services:
     ports:
       - "5433:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgres_data_dev:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 10s
@@ -32,7 +32,7 @@ services:
     ports:
       - "6379:6379"
     volumes:
-      - redis_data:/data
+      - redis_data_dev:/data
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 10s
@@ -52,7 +52,8 @@ services:
     env_file:
       - ./Backend/.env
     environment:
-      DATABASE_URL: postgresql://postgres:Soumya1997@db:5432/Flask_App2
+      # DATABASE_URL: postgresql://postgres:Soumya1997@db:5432/Flask_App2
+      DATABASE_URL : postgresql://postgres:Soumya1997@host.docker.internal:5433/Flask_App2
       REDIS_HOST: redis
       REDIS_PORT: 6379
     depends_on:
@@ -119,8 +120,8 @@ services:
 
 
 volumes:
-  postgres_data:
-  redis_data:
+  postgres_data_dev:
+  redis_data_dev:
 
 networks:
   ism-network:
